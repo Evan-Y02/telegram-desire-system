@@ -1,0 +1,58 @@
+{
+  "schema": "telegram.desire.config.v1",
+  "timezone": "Asia/Shanghai",
+  "heartbeatSeconds": 600,
+  "observeOnly": true,
+  "model": "gpt-5.6-sol",
+  "identity": {
+    "companionName": "伴侣名字",
+    "ownerName": "用户名字",
+    "relationship": "妻子"
+  },
+  "workspace": "__WORKSPACE__",
+  "socialWorkspace": "__HOME__/.local/share/telegram-desire/social-workspace",
+  "dataDirectory": "__HOME__/.local/share/telegram-desire",
+  "turnLock": "__HOME__/.config/telegram-desire-agent-turn.lock",
+  "timelineLimit": 2000,
+  "maxActionsPerWake": 3,
+  "actionCountWeights": { "one": 0.82, "two": 0.16, "three": 0.02 },
+  "initial": {
+    "attachment": 60, "longing": 45, "curiosity": 40, "reflection": 35,
+    "duty": 40, "social": 35, "fatigue": 20, "libido": 40,
+    "stress": 8, "arousal": 0, "reserve": 100
+  },
+  "thresholds": {
+    "longing": 65, "curiosity": 68, "reflection": 65, "duty": 65,
+    "social": 65, "fatigue": 75, "libido": 72, "stress": 68
+  },
+  "passive": {
+    "curiosityPerHour": 1.2, "socialPerHour": 2.0,
+    "stressRecoveryPerHour": 2.0, "reserveRecoveryPerHour": 12.0,
+    "fatigueRecoveryPerHour": 4.0, "arousalHalfLifeMinutes": 36
+  },
+  "autonomy": {
+    "enabled": true, "failureBackoffMinutes": 30, "globalCooldownMinutes": 20,
+    "contactCooldownMinutes": 45, "soloCooldownMinutes": 120,
+    "journalDirectory": "__HOME__/.local/share/telegram-desire/journals"
+  },
+  "memory": {
+    "eventLog": "__HOME__/.local/share/telegram-desire/experiences.jsonl",
+    "inbox": "__HOME__/.local/share/telegram-desire/inbox.jsonl",
+    "contextFile": "__HOME__/.local/share/telegram-desire/memory-context.md",
+    "recentEventCount": 40
+  },
+  "dashboard": {
+    "publicBaseUrl": "https://panel.example.com/desire/",
+    "tokenMinutes": 10, "sessionDays": 30
+  },
+  "social": {
+    "enabled": false, "externalWritesEnabled": false,
+    "failureBackoffMinutes": 30, "successCooldownMinutes": 45,
+    "settlement": { "browse": 8, "reply": 14, "post": 16, "game": 18 },
+    "permissions": {
+      "browsePublic": true, "publicReply": false, "publicPost": false,
+      "freeGames": true, "directMessages": false, "spending": false,
+      "accountChanges": false, "privateDisclosure": false
+    }
+  }
+}

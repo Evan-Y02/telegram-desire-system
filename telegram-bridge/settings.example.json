@@ -1,0 +1,14 @@
+{
+  "workspace": "__WORKSPACE__",
+  "codex": "__HOME__/.local/bin/codex",
+  "desireData": "__HOME__/.local/share/telegram-desire",
+  "turnLock": "__HOME__/.config/telegram-desire-agent-turn.lock",
+  "panelBaseUrl": "https://panel.example.com/desire/",
+  "ownerName": "你的名字",
+  "ownerTerm": "你",
+  "companionName": "伴侣名字",
+  "githubRepository": "",
+  "desireService": "telegram-desire-heartbeat.service",
+  "memoryArchiveScript": "",
+  "newSessionPrompt": "这是通过 Telegram 发来的私聊。请根据工作区中的身份规则与必要记忆自然回应。本轮只聊天，不修改文件或部署服务。"
+}

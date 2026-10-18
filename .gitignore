@@ -1,0 +1,31 @@
+# Secrets and runtime state
+bot-token
+binding.json
+settings.json
+auto-new.json
+chat-state.json
+last-reply.txt
+last-codex-error.txt
+handoffs/
+images/
+*.lock
+*.tmp
+*.part
+*.log
+.env
+.env.*
+!.env.example
+
+# Local config and data
+desire-system/config/default.json
+data/
+journals/
+panel-tokens.json
+panel-sessions.json
+
+# Generated / backup
+__pycache__/
+*.py[cod]
+node_modules/
+*.before-*
+.DS_Store

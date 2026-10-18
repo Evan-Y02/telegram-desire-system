@@ -1,0 +1,11 @@
+[Unit]
+Description=Telegram Desire heartbeat
+After=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=__REPO__/desire-system
+Environment=HOME=__HOME__
+Environment=PATH=__HOME__/.local/bin:/usr/local/bin:/usr/bin:/bin
+Environment=TELEGRAM_DESIRE_CONFIG=__REPO__/desire-system/config/default.json
+ExecStart=/usr/bin/flock -w 540 __HOME__/.local/share/telegram-desire/state.lock /usr/bin/node __REPO__/desire-system/bin/heartbeat.mjs

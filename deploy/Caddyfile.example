@@ -1,0 +1,7 @@
+panel.example.com {
+    encode zstd gzip
+    redir /desire /desire/ 308
+    handle_path /desire/* {
+        reverse_proxy 127.0.0.1:8793
+    }
+}

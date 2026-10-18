@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "reply",
+    "deltas",
+    "signals",
+    "summary"
+  ],
+  "properties": {
+    "reply": {
+      "type": "string",
+      "maxLength": 14000
+    },
+    "deltas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attachment",
+        "longing",
+        "curiosity",
+        "reflection",
+        "duty",
+        "social",
+        "fatigue",
+        "libido",
+        "stress",
+        "arousal",
+        "reserve"
+      ],
+      "properties": {
+        "attachment": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "longing": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "curiosity": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "reflection": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "duty": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "social": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "fatigue": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "libido": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "stress": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "arousal": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        },
+        "reserve": {
+          "type": "number",
+          "minimum": -25,
+          "maximum": 25
+        }
+      }
+    },
+    "signals": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      }
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 1000
+    }
+  }
+}

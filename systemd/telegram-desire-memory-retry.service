@@ -1,0 +1,12 @@
+[Unit]
+Description=Retry pending Telegram Desire memory archives
+After=network-online.target
+
+[Service]
+Type=oneshot
+Environment=HOME=__HOME__
+Environment=MEMORY_ARCHIVE_WORKSPACE=__WORKSPACE__
+Environment=MEMORY_MCP_SERVER=your_memory_server
+Environment=MEMORY_MCP_READ_TOOL=search
+Environment=MEMORY_MCP_WRITE_TOOL=write
+ExecStart=/usr/bin/python3 __REPO__/optional-memory/memory_archive.py worker --budget 90

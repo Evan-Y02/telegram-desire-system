@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "summary", "actions"],
+  "properties": {
+    "status": { "enum": ["acted", "rested", "blocked"] },
+    "summary": { "type": "string", "maxLength": 1000 },
+    "actions": {
+      "type": "array", "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "target", "summary", "confirmed"],
+        "properties": {
+          "kind": { "enum": ["browse", "reply", "post", "game", "rest"] },
+          "target": { "type": "string", "maxLength": 300 },
+          "summary": { "type": "string", "maxLength": 1000 },
+          "confirmed": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

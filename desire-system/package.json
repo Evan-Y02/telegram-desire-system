@@ -1,0 +1,13 @@
+{
+  "name": "telegram-desire-system",
+  "version": "0.1.0",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "heartbeat": "node bin/heartbeat.mjs",
+    "dashboard": "node dashboard/server.mjs"
+  }
+}

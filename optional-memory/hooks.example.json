@@ -1,0 +1,23 @@
+{
+  "description": "Archive incremental Codex conversation history before compaction.",
+  "hooks": {
+    "PreCompact": [{
+      "matcher": "manual|auto",
+      "hooks": [{
+        "type": "command",
+        "command": "env MEMORY_ARCHIVE_WORKSPACE=__WORKSPACE__ MEMORY_MCP_SERVER=your_memory_server MEMORY_MCP_READ_TOOL=search MEMORY_MCP_WRITE_TOOL=write /usr/bin/python3 __REPO__/optional-memory/memory_archive.py hook --budget 420",
+        "timeout": 480,
+        "statusMessage": "归档压缩前增量记忆"
+      }]
+    }],
+    "SessionStart": [{
+      "matcher": "compact",
+      "hooks": [{
+        "type": "command",
+        "command": "env MEMORY_ARCHIVE_WORKSPACE=__WORKSPACE__ MEMORY_MCP_SERVER=your_memory_server MEMORY_MCP_READ_TOOL=search MEMORY_MCP_WRITE_TOOL=write /usr/bin/python3 __REPO__/optional-memory/memory_archive.py context",
+        "timeout": 5,
+        "statusMessage": "接续已核验记忆索引"
+      }]
+    }]
+  }
+}

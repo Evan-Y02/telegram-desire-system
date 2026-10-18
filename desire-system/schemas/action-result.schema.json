@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "summary", "actions"],
+  "properties": {
+    "status": { "enum": ["acted", "rested", "blocked"] },
+    "summary": { "type": "string", "maxLength": 1600 },
+    "actions": {
+      "type": "array", "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "confirmed", "summary", "content", "intensity"],
+        "properties": {
+          "kind": { "enum": ["contact_wife", "solo", "reflect", "explore", "duty", "social_browse", "social_reply", "social_post", "social_game", "rest"] },
+          "confirmed": { "type": "boolean" },
+          "summary": { "type": "string", "maxLength": 1000 },
+          "content": { "type": "string", "maxLength": 8000 },
+          "intensity": { "enum": ["low", "ordinary", "high"] }
+        }
+      }
+    }
+  }
+}

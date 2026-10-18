@@ -1,0 +1,16 @@
+[Unit]
+Description=Telegram Desire private dashboard
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=__REPO__/desire-system
+Environment=HOME=__HOME__
+Environment=TELEGRAM_DESIRE_CONFIG=__REPO__/desire-system/config/default.json
+Environment=PORT=8793
+ExecStart=/usr/bin/node __REPO__/desire-system/dashboard/server.mjs
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
